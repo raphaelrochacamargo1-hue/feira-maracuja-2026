@@ -16,13 +16,13 @@
 
     #painel{
       position:fixed;
-      bottom:20px;
       left:50%;
+      bottom:115px;
       transform:translateX(-50%);
-      background:rgba(0,0,0,.85);
-      color:white;
       width:90%;
       max-width:420px;
+      background:rgba(0,0,0,.88);
+      color:white;
       padding:18px;
       border-radius:18px;
       text-align:center;
@@ -32,6 +32,7 @@
 
     #painel h2{
       color:#ffd54f;
+      margin-bottom:8px;
     }
 
     #painel button{
@@ -42,6 +43,41 @@
       background:#7a4bb3;
       color:white;
       font-weight:bold;
+    }
+
+    .menu-ar{
+      position:fixed;
+      left:0;
+      bottom:0;
+      width:100%;
+      background:rgba(0,0,0,.82);
+      padding:12px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:8px;
+      z-index:9998;
+    }
+
+    .menu-ar button{
+      border:none;
+      border-radius:14px;
+      padding:12px 5px;
+      font-weight:bold;
+      color:white;
+      background:#4CAF50;
+      font-size:13px;
+    }
+
+    .menu-ar button:nth-child(2){
+      background:#FF9800;
+    }
+
+    .menu-ar button:nth-child(3){
+      background:#7A4BB3;
+    }
+
+    .menu-ar button:nth-child(4){
+      background:#2196F3;
     }
   </style>
 </head>
@@ -54,49 +90,57 @@
   <button onclick="fecharPainel()">Fechar</button>
 </div>
 
+<div class="menu-ar">
+  <button onclick="mostrarInfo('flor')">🌸 Flor</button>
+  <button onclick="mostrarInfo('polinizacao')">🐝 Polinização</button>
+  <button onclick="mostrarInfo('beneficios')">🧪 Benefícios</button>
+  <button onclick="mostrarInfo('curiosidades')">🍹 Curiosidades</button>
+</div>
+
 <a-scene
   embedded
   vr-mode-ui="enabled: false"
   renderer="logarithmicDepthBuffer: true;"
   arjs="sourceType: webcam; debugUIEnabled: false;"
 >
-   <a-marker preset="hiro">
 
-  <a-image
-    src="images/maracuja.png"
-    position="0 0 0"
-    rotation="-90 0 0"
-    width="3"
-    height="3">
-  </a-image>
+  <a-marker preset="hiro">
 
-  <a-text
-    value="MARACUJA"
-    position="-1.2 1.7 0"
-    rotation="-90 0 0"
-    color="#FFD700"
-    scale="1 1 1">
-  </a-text>
+    <a-image
+      src="images/maracuja.png"
+      position="0 0 0"
+      rotation="-90 0 0"
+      width="3"
+      height="3">
+    </a-image>
 
-</a-marker>
+    <a-text
+      value="MARACUJA"
+      position="-1.2 1.7 0"
+      rotation="-90 0 0"
+      color="#FFD700"
+      scale="1 1 1">
+    </a-text>
 
-  <a-entity camera cursor="rayOrigin: mouse"></a-entity>
+  </a-marker>
+
+  <a-entity camera></a-entity>
 
 </a-scene>
 
 <script>
   const dados = {
     flor: {
-      titulo: "🌱 Flor do Maracujá",
+      titulo: "🌸 Flor do Maracujá",
       texto: "A flor do maracujá é essencial para formar o fruto. Ela precisa ser polinizada para gerar o maracujá."
-    },
-    beneficios: {
-      titulo: "🧪 Benefícios",
-      texto: "O maracujá possui vitaminas, fibras e antioxidantes, podendo fazer parte de uma alimentação equilibrada."
     },
     polinizacao: {
       titulo: "🐝 Polinização",
       texto: "A polinização pode ser feita por insetos, principalmente abelhas grandes chamadas mamangavas."
+    },
+    beneficios: {
+      titulo: "🧪 Benefícios",
+      texto: "O maracujá possui vitaminas, fibras e antioxidantes, podendo fazer parte de uma alimentação equilibrada."
     },
     curiosidades: {
       titulo: "🍹 Curiosidades",
@@ -108,15 +152,11 @@
   const titulo = document.getElementById("titulo");
   const texto = document.getElementById("texto");
 
-  document.querySelectorAll(".botaoAR").forEach(botao => {
-    botao.addEventListener("click", () => {
-      const tipo = botao.getAttribute("data-tipo");
-
-      titulo.textContent = dados[tipo].titulo;
-      texto.textContent = dados[tipo].texto;
-      painel.style.display = "block";
-    });
-  });
+  function mostrarInfo(tipo){
+    titulo.textContent = dados[tipo].titulo;
+    texto.textContent = dados[tipo].texto;
+    painel.style.display = "block";
+  }
 
   function fecharPainel(){
     painel.style.display = "none";
