@@ -1,0 +1,254 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins', Arial, sans-serif;
+  background:#101810;
+  color:white;
+  overflow:hidden;
+}
+
+.inicio{
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:30px;
+  background:
+    radial-gradient(circle at top left, rgba(255,213,79,.25), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(122,75,179,.35), transparent 35%),
+    linear-gradient(135deg,#0f2f16,#1b5e20,#6a3da8);
+}
+
+.conteudo{
+  max-width:850px;
+  position:relative;
+  z-index:2;
+  animation:entrada 1.2s ease;
+}
+
+.fruta{
+  font-size:110px;
+  margin-bottom:15px;
+  animation:flutuar 3s ease-in-out infinite;
+}
+
+.subtitulo{
+  color:#d9ffd6;
+  font-size:18px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:15px;
+}
+
+h1{
+  font-size:64px;
+  text-transform:uppercase;
+  margin-bottom:15px;
+}
+
+h2{
+  font-size:24px;
+  color:#ffd54f;
+  margin-bottom:25px;
+}
+
+.descricao{
+  font-size:19px;
+  line-height:1.7;
+  margin:0 auto 35px;
+  max-width:700px;
+}
+
+.botao{
+  display:inline-block;
+  background:white;
+  color:#1b5e20;
+  padding:17px 38px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:17px;
+  transition:.3s;
+  animation:pulsar 2s infinite;
+}
+
+.botao:hover{
+  transform:translateY(-6px);
+  background:#d9ffd6;
+}
+
+.rodape-inicio{
+  margin-top:35px;
+  font-size:14px;
+  opacity:.8;
+}
+
+.particula{
+  position:absolute;
+  width:18px;
+  height:18px;
+  background:rgba(255,255,255,.45);
+  border-radius:50%;
+  animation:subir 6s infinite ease-in-out;
+}
+
+.p1{
+  left:15%;
+  bottom:10%;
+}
+
+.p2{
+  left:75%;
+  bottom:20%;
+  animation-delay:1.5s;
+}
+
+.p3{
+  left:50%;
+  bottom:5%;
+  animation-delay:3s;
+}
+
+@keyframes entrada{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes flutuar{
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-18px);
+  }
+}
+
+@keyframes pulsar{
+  0%{
+    box-shadow:0 0 0 rgba(255,255,255,.6);
+  }
+
+  50%{
+    box-shadow:0 0 30px rgba(255,255,255,.75);
+  }
+
+  100%{
+    box-shadow:0 0 0 rgba(255,255,255,.6);
+  }
+}
+
+@keyframes subir{
+  0%{
+    transform:translateY(0) scale(1);
+    opacity:.3;
+  }
+
+  50%{
+    opacity:.8;
+  }
+
+  100%{
+    transform:translateY(-200px) scale(1.6);
+    opacity:0;
+  }
+}
+
+@media(max-width:700px){
+  h1{
+    font-size:42px;
+  }
+
+  h2{
+    font-size:19px;
+  }
+
+  .fruta{
+    font-size:85px;
+  }
+
+  .descricao{
+    font-size:16px;
+  }
+}.botao-secundario{
+  margin-left:12px;
+  background:#ffd54f;
+  color:#1b5e20;
+}
+
+@media(max-width:700px){
+  .botao-secundario{
+    margin-left:0;
+    margin-top:15px;
+  }
+}  .logo-principal{
+    width:150px;
+    height:auto;
+    margin:0 auto 25px;
+    display:block;
+    filter:drop-shadow(0 0 25px rgba(255,213,79,.45));
+    animation:flutuar 3s ease-in-out infinite;
+}  .botao{
+  background:linear-gradient(135deg,#ffd54f,#ffb300);
+  color:#123d1f;
+  padding:18px 42px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:800;
+  display:inline-block;
+  box-shadow:0 0 30px rgba(255,213,79,.45);
+  transition:.3s;
+}
+
+.botao:hover{
+  transform:translateY(-6px) scale(1.05);
+  box-shadow:0 0 45px rgba(255,213,79,.8);
+}
+
+.botao-secundario{
+  background:linear-gradient(135deg,#ffffff,#d9ffd6);
+  margin-left:12px;
+}#splash{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(135deg,#0f2f16,#1b5e20,#7a4bb3);
+  z-index:99999;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  transition:opacity .8s;
+}
+
+.logoSplash{
+  width:140px;
+  margin-bottom:25px;
+  animation:flutuar 3s ease-in-out infinite;
+  filter:drop-shadow(0 0 25px rgba(255,213,79,.6));
+}
+
+#splash h1{
+  font-size:38px;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+#splash p{
+  color:#ffd54f;
+  font-size:18px;
+}

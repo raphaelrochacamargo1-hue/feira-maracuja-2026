@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificado - Maracujá Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../css/quiz.css">
+</head>
+<body>
+
+<section class="quiz-container">
+
+  <a href="../index.html" class="voltar">← Voltar</a>
+
+  <div class="quiz-box">
+
+    <h1>🏆 Certificado</h1>
+
+    <p>Digite seu nome para gerar seu certificado:</p>
+
+    <input id="nomeAluno" type="text" placeholder="Seu nome" style="padding:15px; border-radius:15px; border:none; width:100%; margin:20px 0;">
+
+    <button id="gerarCertificado">Gerar Certificado</button>
+    <button id="baixarCertificado" style="display:none;">
+  Baixar / Imprimir Certificado
+</button>
+
+    <div id="certificado"></div>
+      <h2>🍈 Maracujá Experience</h2>
+      <p>Certificamos que</p>
+      <h1 id="nomeCertificado"></h1>
+      <p>concluiu a experiência interativa sobre o maracujá.</p>
+      <p>Feira de Ciências 2026</p>
+    </div>
+
+  </div>
+
+<nav class="bottom-nav">
+  <a href="../index.html">🏠<span>Início</span></a>
+  <a href="camera.html">📷<span>AR</span></a>
+  <a href="quiz.html">🎮<span>Quiz</span></a>
+  <a href="certificado.html" class="ativo">🏆<span>Certificado</span></a>
+</nav>
+</section>
+
+<script>
+  const botao = document.getElementById("gerarCertificado");
+
+  botao.addEventListener("click", () => {
+    const nome = document.getElementById("nomeAluno").value;
+
+    if(nome.trim() === ""){
+      alert("Digite seu nome primeiro.");
+      return;
+    }
+
+    document.getElementById("nomeCertificado").textContent = nome;
+    document.getElementById("certificado").style.display = "block";
+    document.getElementById("baixarCertificado").style.display = "inline-block";
+  });
+document.getElementById("baixarCertificado").addEventListener("click", () => {
+  window.print();
+});</script>
+
+</body>
+</html>

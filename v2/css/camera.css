@@ -1,0 +1,141 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  overflow:hidden;
+  font-family:'Poppins', Arial, sans-serif;
+  background:#000;
+}
+
+.topo-ar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,.65);
+  color:white;
+  z-index:9999;
+}
+
+.topo-ar a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.topo-ar h1{
+  font-size:18px;
+}
+
+#painel{
+  position:fixed;
+  left:50%;
+  bottom:125px;
+  transform:translateX(-50%);
+  width:90%;
+  max-width:430px;
+  background:rgba(0,0,0,.9);
+  color:white;
+  padding:22px;
+  border-radius:22px;
+  text-align:center;
+  display:none;
+  z-index:9999;
+  box-shadow:0 0 30px rgba(255,213,79,.35);
+}
+
+#painel h2{
+  color:#ffd54f;
+  margin-bottom:10px;
+}
+
+#painel p{
+  line-height:1.6;
+}
+
+#painel button{
+  margin-top:15px;
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  background:#7a4bb3;
+  color:white;
+  font-weight:bold;
+}
+
+.menu-ar{
+  position:fixed;
+  left:0;
+  bottom:0;
+  width:100%;
+  background:rgba(0,0,0,.85);
+  padding:12px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  z-index:9998;
+}
+
+.menu-ar button{
+  border:none;
+  border-radius:18px;
+  padding:12px 5px;
+  font-weight:bold;
+  color:white;
+  background:#4CAF50;
+  font-size:20px;
+}
+
+.menu-ar button span{
+  display:block;
+  font-size:11px;
+  margin-top:5px;
+}
+
+.menu-ar button:nth-child(2){
+  background:#FF9800;
+}
+
+.menu-ar button:nth-child(3){
+  background:#7A4BB3;
+}
+
+.menu-ar button:nth-child(4){
+  background:#2196F3;
+}.bottom-nav{
+  position:fixed;
+  left:0;
+  bottom:0;
+  width:100%;
+  background:rgba(0,0,0,.9);
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  padding:10px;
+  z-index:9999;
+}
+
+.bottom-nav a{
+  color:white;
+  text-decoration:none;
+  text-align:center;
+  font-weight:bold;
+  font-size:18px;
+}
+
+.bottom-nav span{
+  display:block;
+  font-size:11px;
+  margin-top:4px;
+}
+
+.bottom-nav a.ativo{
+  color:#ffd54f;
+}
