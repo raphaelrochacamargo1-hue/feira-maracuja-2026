@@ -223,4 +223,16 @@ body{
   padding:12px 28px;
   border-radius:30px;
   font-weight:800;
+}.botao-curiosidade{
+  position:fixed;
+  left:50%;
+  bottom:95px;
+  transform:translateX(-50%);
+  z-index:99999;
+  border:none;
+  background:#ffd54f;
+  color:#123d1f;
+  padding:12px 22px;
+  border-radius:30px;
+  font-weight:800;
 }
