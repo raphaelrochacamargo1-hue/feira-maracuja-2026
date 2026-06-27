@@ -14,6 +14,39 @@
       font-family:Arial, sans-serif;
     }
 
+    #telaInicio{
+      position:fixed;
+      inset:0;
+      background:linear-gradient(135deg,#1b5e20,#7a4bb3);
+      color:white;
+      z-index:99999;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:30px;
+    }
+
+    #telaInicio h1{
+      font-size:55px;
+      margin-bottom:15px;
+    }
+
+    #telaInicio p{
+      font-size:18px;
+      margin-bottom:25px;
+    }
+
+    #telaInicio button{
+      border:none;
+      padding:15px 30px;
+      border-radius:30px;
+      background:white;
+      color:#1b5e20;
+      font-weight:bold;
+      font-size:16px;
+    }
+
     #painel{
       position:fixed;
       left:50%;
@@ -68,21 +101,21 @@
       font-size:13px;
     }
 
-    .menu-ar button:nth-child(2){
-      background:#FF9800;
-    }
-
-    .menu-ar button:nth-child(3){
-      background:#7A4BB3;
-    }
-
-    .menu-ar button:nth-child(4){
-      background:#2196F3;
-    }
+    .menu-ar button:nth-child(2){ background:#FF9800; }
+    .menu-ar button:nth-child(3){ background:#7A4BB3; }
+    .menu-ar button:nth-child(4){ background:#2196F3; }
   </style>
 </head>
 
 <body>
+
+<div id="telaInicio">
+  <div>
+    <h1>🍈 Maracujá AR</h1>
+    <p>Escaneie o marcador Hiro e descubra informações interativas sobre o maracujá.</p>
+    <button onclick="iniciarAR()">Iniciar experiência</button>
+  </div>
+</div>
 
 <div id="painel">
   <h2 id="titulo"></h2>
@@ -105,7 +138,6 @@
 >
 
   <a-marker preset="hiro">
-
     <a-image
       src="images/maracuja.png"
       position="0 0 0"
@@ -121,7 +153,6 @@
       color="#FFD700"
       scale="1 1 1">
     </a-text>
-
   </a-marker>
 
   <a-entity camera></a-entity>
@@ -148,18 +179,18 @@
     }
   };
 
-  const painel = document.getElementById("painel");
-  const titulo = document.getElementById("titulo");
-  const texto = document.getElementById("texto");
+  function iniciarAR(){
+    document.getElementById("telaInicio").style.display = "none";
+  }
 
   function mostrarInfo(tipo){
-    titulo.textContent = dados[tipo].titulo;
-    texto.textContent = dados[tipo].texto;
-    painel.style.display = "block";
+    document.getElementById("titulo").textContent = dados[tipo].titulo;
+    document.getElementById("texto").textContent = dados[tipo].texto;
+    document.getElementById("painel").style.display = "block";
   }
 
   function fecharPainel(){
-    painel.style.display = "none";
+    document.getElementById("painel").style.display = "none";
   }
 </script>
 
