@@ -1,0 +1,143 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, sans-serif;
+  background:#f4f8ec;
+  color:#263314;
+}
+
+.inicio{
+  min-height:100vh;
+  background:linear-gradient(135deg,#4CAF50,#7A4BB3);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  padding:20px;
+}
+
+.conteudo h1{
+  font-size:80px;
+}
+
+.conteudo p{
+  font-size:24px;
+  margin:20px 0 35px;
+}
+
+.botao{
+  display:inline-block;
+  background:white;
+  color:#4CAF50;
+  padding:15px 35px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+section{
+  width:90%;
+  max-width:1000px;
+  margin:60px auto;
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.menu-cards{
+  text-align:center;
+}
+
+.menu-cards h2{
+  margin-bottom:30px;
+  color:#4CAF50;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#eef7e7;
+  color:#263314;
+  padding:25px;
+  border-radius:18px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  background:#dcedc8;
+}
+
+h2{
+  color:#4CAF50;
+  margin-bottom:20px;
+}
+
+p{
+  line-height:1.8;
+}
+
+footer{
+  text-align:center;
+  background:#263314;
+  color:white;
+  padding:25px;
+}.quiz-box{
+  margin-top:25px;
+  background:#eef7e7;
+  padding:30px;
+  border-radius:20px;
+}
+
+#respostas{
+  display:grid;
+  gap:15px;
+  margin:25px 0;
+}
+
+.resposta{
+  padding:15px;
+  border:none;
+  border-radius:15px;
+  background:white;
+  cursor:pointer;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.resposta:hover{
+  background:#dcedc8;
+}
+
+.correta{
+  background:#4CAF50 !important;
+  color:white;
+}
+
+.errada{
+  background:#e53935 !important;
+  color:white;
+}
+
+#proxima{
+  background:#7A4BB3;
+  color:white;
+  padding:14px 25px;
+  border:none;
+  border-radius:25px;
+  cursor:pointer;
+  font-weight:bold;
+}
