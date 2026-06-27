@@ -60,39 +60,25 @@
   renderer="logarithmicDepthBuffer: true;"
   arjs="sourceType: webcam; debugUIEnabled: false;"
 >
+   <a-marker preset="hiro">
 
-  <a-marker preset="hiro">
+  <a-image
+    src="images/maracuja.png"
+    position="0 0 0"
+    rotation="-90 0 0"
+    width="3"
+    height="3">
+  </a-image>
 
-    <a-image
-      src="images/maracuja.png"
-      position="0 0.5 0"
-      rotation="-90 0 0"
-      width="2.8"
-      height="2.8"
-      animation="property: rotation; to: -90 360 0; loop: true; dur: 10000">
-    </a-image>
+  <a-text
+    value="MARACUJA"
+    position="-1.2 1.7 0"
+    rotation="-90 0 0"
+    color="#FFD700"
+    scale="1 1 1">
+  </a-text>
 
-    <a-text
-      value="MARACUJA"
-      position="-1.1 1.8 0"
-      rotation="-90 0 0"
-      color="#FFD700"
-      scale="1.2 1.2 1.2">
-    </a-text>
-
-    <a-circle class="botaoAR" data-tipo="flor" position="-1.5 0 0" rotation="-90 0 0" radius="0.28" color="#4CAF50"></a-circle>
-    <a-text value="Flor" position="-1.75 0 0.05" rotation="-90 0 0" color="white" scale="0.45 0.45 0.45"></a-text>
-
-    <a-circle class="botaoAR" data-tipo="beneficios" position="1.5 0 0" rotation="-90 0 0" radius="0.28" color="#7A4BB3"></a-circle>
-    <a-text value="Beneficios" position="1.05 0 0.05" rotation="-90 0 0" color="white" scale="0.38 0.38 0.38"></a-text>
-
-    <a-circle class="botaoAR" data-tipo="polinizacao" position="-1.5 1.1 0" rotation="-90 0 0" radius="0.28" color="#FF9800"></a-circle>
-    <a-text value="Polinizacao" position="-1.95 1.1 0.05" rotation="-90 0 0" color="white" scale="0.35 0.35 0.35"></a-text>
-
-    <a-circle class="botaoAR" data-tipo="curiosidades" position="1.5 1.1 0" rotation="-90 0 0" radius="0.28" color="#2196F3"></a-circle>
-    <a-text value="Curiosidades" position="1.0 1.1 0.05" rotation="-90 0 0" color="white" scale="0.34 0.34 0.34"></a-text>
-
-  </a-marker>
+</a-marker>
 
   <a-entity camera cursor="rayOrigin: mouse"></a-entity>
 
