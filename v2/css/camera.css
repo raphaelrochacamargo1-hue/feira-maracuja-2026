@@ -138,4 +138,46 @@ body{
 
 .bottom-nav a.ativo{
   color:#ffd54f;
+}#popupCuriosidade{
+  position:fixed;
+  left:50%;
+  bottom:130px;
+  transform:translateX(-50%) translateY(30px);
+  width:90%;
+  max-width:420px;
+  background:rgba(0,0,0,.92);
+  color:white;
+  padding:22px;
+  border-radius:22px;
+  text-align:center;
+  z-index:99999;
+  display:none;
+  opacity:0;
+  box-shadow:0 0 35px rgba(255,213,79,.45);
+  transition:.4s;
+}
+
+#popupCuriosidade.ativo{
+  display:block;
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+
+#popupCuriosidade strong{
+  color:#ffd54f;
+  font-size:22px;
+}
+
+#popupCuriosidade p{
+  margin:12px 0;
+  line-height:1.6;
+}
+
+#popupCuriosidade button{
+  border:none;
+  background:#ffd54f;
+  color:#123d1f;
+  padding:11px 24px;
+  border-radius:25px;
+  font-weight:bold;
 }

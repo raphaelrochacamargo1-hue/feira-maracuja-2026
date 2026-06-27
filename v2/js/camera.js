@@ -28,4 +28,18 @@ function mostrarInfo(tipo){
 
 function fecharPainel(){
   document.getElementById("painel").style.display = "none";
+}function mostrarCuriosidade(){
+  const popup = document.getElementById("popupCuriosidade");
+  const som = document.getElementById("somClique");
+
+  if(som){
+    som.currentTime = 0;
+    som.play();
+  }
+
+  popup.classList.add("ativo");
+}
+
+function fecharCuriosidade(){
+  document.getElementById("popupCuriosidade").classList.remove("ativo");
 }

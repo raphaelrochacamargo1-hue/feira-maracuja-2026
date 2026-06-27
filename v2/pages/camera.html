@@ -49,11 +49,29 @@
   <a-marker preset="hiro">
 
     <a-image
-      src="../../images/maracuja.png"
+      src="../assets/ar/images/maracuja.png"
       position="0 0 0"
       rotation="-90 0 0"
       width="3"
       height="3">
+
+      animation="property: rotation;
+           to: -90 360 0;
+           loop: true;
+           dur: 12000;
+           easing: linear;"
+          animation__pulse="
+
+property: scale;
+dir: alternate;
+dur: 1600;
+loop: true;
+to: 1.08 1.08 1.08;
+easing: easeInOutSine"
+
+class="clickable"
+onclick="mostrarCuriosidade()"
+
     </a-image>
 
     <a-text
@@ -77,5 +95,16 @@
   <a href="certificado.html">🏆<span>Certificado</span></a>
 </nav>
 <script src="../js/camera.js"></script>
+<audio id="somClique" src="../sounds/toque.mp3"></audio>
+
+<div id="popupCuriosidade">
+
+🍈 <strong>Curiosidade</strong>
+
+<p>O maracujá é rico em vitamina C, antioxidantes e fibras.</p>
+
+<button onclick="fecharCuriosidade()">Fechar</button>
+
+</div>
 </body>
 </html>
