@@ -4,13 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AR Maracujá Experience</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="../css/camera.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../css/camera.css">
 
@@ -53,25 +50,11 @@
       position="0 0 0"
       rotation="-90 0 0"
       width="3"
-      height="3">
-
-      animation="property: rotation;
-           to: -90 360 0;
-           loop: true;
-           dur: 12000;
-           easing: linear;"
-          animation__pulse="
-
-property: scale;
-dir: alternate;
-dur: 1600;
-loop: true;
-to: 1.08 1.08 1.08;
-easing: easeInOutSine"
-
-class="clickable"
-onclick="mostrarCuriosidade()"
-
+      height="3"
+      class="clickable"
+      onclick="mostrarCuriosidade()"
+      animation="property: rotation; to: -90 360 0; loop: true; dur: 12000; easing: linear;"
+      animation__pulse="property: scale; dir: alternate; dur: 1600; loop: true; to: 1.08 1.08 1.08; easing: easeInOutSine;">
     </a-image>
 
     <a-text
@@ -94,17 +77,16 @@ onclick="mostrarCuriosidade()"
   <a href="quiz.html">🎮<span>Quiz</span></a>
   <a href="certificado.html">🏆<span>Certificado</span></a>
 </nav>
-<script src="../js/camera.js"></script>
+
 <audio id="somClique" src="../sounds/toque.mp3"></audio>
 
 <div id="popupCuriosidade">
-
-🍈 <strong>Curiosidade</strong>
-
-<p>O maracujá é rico em vitamina C, antioxidantes e fibras.</p>
-
-<button onclick="fecharCuriosidade()">Fechar</button>
-
+  🍈 <strong>Curiosidade</strong>
+  <p>O maracujá é rico em vitamina C, antioxidantes e fibras.</p>
+  <button onclick="fecharCuriosidade()">Fechar</button>
 </div>
+
+<script src="../js/camera.js"></script>
+
 </body>
 </html>

@@ -180,4 +180,47 @@ body{
   padding:11px 24px;
   border-radius:25px;
   font-weight:bold;
+}#popupCuriosidade{
+  position:fixed;
+  left:50%;
+  bottom:135px;
+  transform:translateX(-50%) translateY(30px);
+  width:90%;
+  max-width:440px;
+  background:rgba(12,18,12,.95);
+  color:white;
+  padding:25px;
+  border-radius:25px;
+  text-align:center;
+  z-index:99999;
+  display:none;
+  opacity:0;
+  border:2px solid rgba(255,213,79,.5);
+  box-shadow:0 0 40px rgba(255,213,79,.35);
+  transition:.35s;
+}
+
+#popupCuriosidade.ativo{
+  display:block;
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+
+#popupCuriosidade strong{
+  color:#ffd54f;
+  font-size:24px;
+}
+
+#popupCuriosidade p{
+  margin:15px 0;
+  line-height:1.7;
+}
+
+#popupCuriosidade button{
+  border:none;
+  background:linear-gradient(135deg,#ffd54f,#ffb300);
+  color:#123d1f;
+  padding:12px 28px;
+  border-radius:30px;
+  font-weight:800;
 }
