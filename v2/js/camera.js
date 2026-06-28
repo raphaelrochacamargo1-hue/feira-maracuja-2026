@@ -24,8 +24,20 @@ function mostrarInfo(tipo){
   document.getElementById("titulo").textContent = dados[tipo].titulo;
   document.getElementById("texto").textContent = dados[tipo].texto;
   document.getElementById("painel").classList.add("ativo");
+
+  const menu = document.getElementById("menuAR");
+
+  if(menu){
+    menu.classList.remove("ativo");
+  }
 }
 
 function fecharPainel(){
   document.getElementById("painel").classList.remove("ativo");
+}function alternarMenuAR(){
+  const menu = document.getElementById("menuAR");
+
+  if(menu){
+    menu.classList.toggle("ativo");
+  }
 }

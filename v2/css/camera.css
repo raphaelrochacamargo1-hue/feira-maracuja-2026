@@ -165,4 +165,62 @@ body{
 a-scene{
   width:100vw !important;
   height:100vh !important;
+}/* MODO FOCO AR */
+
+.bottom-nav{
+  display:none;
+}
+
+.topo-ar{
+  padding:10px 12px;
+}
+
+.topo-ar h1{
+  font-size:15px;
+}
+
+.topo-ar a{
+  font-size:12px;
+  padding:8px 11px;
+}
+
+.botao-info-ar{
+  position:fixed;
+  right:16px;
+  bottom:20px;
+  z-index:99999;
+  border:none;
+  cursor:pointer;
+  background:linear-gradient(135deg,#ffd54f,#ffb300);
+  color:#123d1f;
+  padding:13px 18px;
+  border-radius:30px;
+  font-weight:900;
+  box-shadow:0 0 28px rgba(255,213,79,.55);
+}
+
+.menu-ar{
+  display:none;
+  position:fixed;
+  left:50%;
+  bottom:76px;
+  transform:translateX(-50%);
+  width:92%;
+  max-width:430px;
+  background:rgba(0,0,0,.86);
+  padding:10px;
+  grid-template-columns:repeat(2,1fr);
+  gap:8px;
+  border-radius:22px;
+  z-index:99998;
+}
+
+.menu-ar.ativo{
+  display:grid;
+}
+
+#painel{
+  bottom:90px;
+  max-height:48vh;
+  overflow-y:auto;
 }
