@@ -3,41 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Certificado - Maracujá Experience</title>
+  <title>Certificado Maracujá Experience</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../css/quiz.css">
+  <link rel="stylesheet" href="../css/quiz.css">
 </head>
+
 <body>
 
-<section class="quiz-container">
+<section class="certificado-container">
 
   <a href="../index.html" class="voltar">← Voltar</a>
 
-  <div class="quiz-box">
+  <div class="certificado-box">
+
+    <p class="etapa">Conclusão da Experiência</p>
 
     <h1>🏆 Certificado</h1>
 
-    <p>Digite seu nome para gerar seu certificado:</p>
+    <p class="texto-certificado">
+      Digite seu nome para gerar seu certificado de participação.
+    </p>
 
-    <input id="nomeAluno" type="text" placeholder="Seu nome" style="padding:15px; border-radius:15px; border:none; width:100%; margin:20px 0;">
+    <input type="text" id="nomeAluno" placeholder="Digite seu nome completo">
 
-    <button id="gerarCertificado">Gerar Certificado</button>
-    <button id="baixarCertificado" style="display:none;">
-  Baixar / Imprimir Certificado
-</button>
+    <div class="botoes-certificado">
+      <button onclick="gerarCertificado()">Gerar Certificado</button>
+      <button onclick="baixarCertificado()">Baixar / Imprimir</button>
+    </div>
 
-    <div id="certificado"></div>
-      <h2>🍈 Maracujá Experience</h2>
-      <p>Certificamos que</p>
-      <h1 id="nomeCertificado"></h1>
-      <p>concluiu a experiência interativa sobre o maracujá.</p>
-      <p>Feira de Ciências 2026</p>
+    <div id="certificado" class="certificado-card">
+
+      <p class="cert-topo">Maracujá Experience</p>
+
+      <h2>Certificado de Participação</h2>
+
+      <p class="cert-linha">
+        Certificamos que
+      </p>
+
+      <h3 id="nomeCertificado">Nome do participante</h3>
+
+      <p class="cert-linha">
+        participou da experiência interativa sobre o maracujá,
+        envolvendo ciência, tecnologia, realidade aumentada e quiz educativo.
+      </p>
+
+      <div class="cert-info">
+        <p id="pontuacaoCertificado">Pontuação: 0 de 0</p>
+        <p id="dataCertificado">Data: --/--/----</p>
+      </div>
+
+      <div class="assinatura">
+        <span></span>
+        <p>Feira de Ciências 2026</p>
+      </div>
+
     </div>
 
   </div>
+
+</section>
 
 <nav class="bottom-nav">
   <a href="../index.html">🏠<span>Início</span></a>
@@ -45,26 +74,54 @@
   <a href="quiz.html">🎮<span>Quiz</span></a>
   <a href="certificado.html" class="ativo">🏆<span>Certificado</span></a>
 </nav>
-</section>
 
 <script>
-  const botao = document.getElementById("gerarCertificado");
+function gerarCertificado(){
+  const nome = document.getElementById("nomeAluno").value.trim();
 
-  botao.addEventListener("click", () => {
-    const nome = document.getElementById("nomeAluno").value;
+  if(nome === ""){
+    alert("Digite seu nome para gerar o certificado.");
+    return;
+  }
 
-    if(nome.trim() === ""){
-      alert("Digite seu nome primeiro.");
-      return;
-    }
+  const pontos = localStorage.getItem("pontuacaoQuiz") || 0;
+  const total = localStorage.getItem("totalPerguntas") || 4;
 
-    document.getElementById("nomeCertificado").textContent = nome;
-    document.getElementById("certificado").style.display = "block";
-    document.getElementById("baixarCertificado").style.display = "inline-block";
-  });
-document.getElementById("baixarCertificado").addEventListener("click", () => {
+  const hoje = new Date();
+  const data = hoje.toLocaleDateString("pt-BR");
+
+  document.getElementById("nomeCertificado").textContent = nome;
+  document.getElementById("pontuacaoCertificado").textContent = `Pontuação: ${pontos} de ${total}`;
+  document.getElementById("dataCertificado").textContent = `Data: ${data}`;
+
+  document.getElementById("certificado").style.display = "block";
+  localStorage.setItem("gerouCertificado", "sim");
+  salvarNoRanking(nome, pontos, total);
+}
+
+function baixarCertificado(){
+  const certificado = document.getElementById("certificado");
+
+  if(certificado.style.display !== "block"){
+    alert("Gere o certificado primeiro.");
+    return;
+  }
+
   window.print();
-});</script>
+}
+function salvarNoRanking(nome, pontos, total){
+  const ranking = JSON.parse(localStorage.getItem("rankingMaracuja")) || [];
+
+  ranking.push({
+    nome: nome,
+    pontos: Number(pontos),
+    total: Number(total)
+  });
+
+  ranking.sort((a, b) => b.pontos - a.pontos);
+
+  localStorage.setItem("rankingMaracuja", JSON.stringify(ranking));
+}</script>
 
 </body>
 </html>

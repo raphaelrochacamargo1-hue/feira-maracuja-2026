@@ -4,25 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maracujá Experience</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
   <div id="splash">
-    <img src="assets/logo/images/maracuja.png" class="logoSplash">
+    <img src="assets/logo/images/maracuja.png" class="logoSplash" alt="Maracujá">
     <h1>Maracujá Experience</h1>
     <p>Ciência • Tecnologia • Interatividade</p>
   </div>
 
   <section class="inicio">
-
     <div class="particula p1"></div>
     <div class="particula p2"></div>
     <div class="particula p3"></div>
 
     <div class="conteudo">
-
       <img class="logo-principal" src="assets/logo/images/maracuja.png" alt="Maracujá">
 
       <p class="subtitulo">Feira de Ciências 2026</p>
@@ -36,34 +39,154 @@
         conteúdos educativos, quiz e certificado.
       </p>
 
-      <div class="menu-principal">
+        <div class="menu-principal">
 
-        <a href="pages/camera.html" class="botao botao-ar">
-          🍈 Iniciar AR
-        </a>
+  <button class="botao botao-ar" onclick="marcarEtapa('viuAR'); iniciarExperiencia()">
+    🍈 Iniciar AR
+  </button>
 
-        <a href="pages/aprender.html" class="botao">
-          📚 Aprender
-        </a>
+  <a href="pages/aprender.html" class="botao" onclick="marcarEtapa('aprendeu')">
+    📚 Aprender
+  </a>
 
-        <a href="pages/quiz.html" class="botao">
-          🧠 Quiz
-        </a>
+  <a href="pages/quiz.html" class="botao">
+    🧠 Quiz
+  </a>
 
-        <a href="pages/certificado.html" class="botao">
-          🏆 Certificado
-        </a>
+  <a href="pages/certificado.html" class="botao">
+    🏆 Certificado
+  </a>
 
+</div>
+
+      <div class="passaporte">
+  <h3>🎟️ Passaporte da Experiência</h3>
+
+  <div class="etapas-passaporte">
+    <div class="selo" id="seloAprender">📚<span>Aprender</span></div>
+    <div class="selo" id="seloAR">📷<span>AR</span></div>
+    <div class="selo" id="seloQuiz">🧠<span>Quiz</span></div>
+    <div class="selo" id="seloCertificado">🏆<span>Certificado</span></div>
+  </div>
+
+  <p id="textoProgresso">Comece sua jornada pelo maracujá.</p>
+  <button id="botaoContinuar" class="botao-continuar" onclick="continuarExperiencia()">
+  Continuar Experiência
+</button>
+<div id="conquistaFinal" class="conquista-final">
+  <h3>🎉 Experiência completa!</h3>
+  <p>
+    Parabéns! Você concluiu todas as etapas do Maracujá Experience.
+  </p>
+  <span>🍈 Certificado liberado com sucesso!</span>
+</div>
+<div class="ranking-feira">
+  <h3>🏅 Resultado neste aparelho</h3>
+
+  <ol id="listaRanking">
+    <li>Nenhum resultado ainda.</li>
+  </ol>
+
+ 
+</div>
+
+<button class="botao-ajuda-feira" onclick="abrirModoFeira()">
+  📱 Como usar na feira
+</button>
+<button class="botao-sobre-projeto" onclick="abrirSobreProjeto()">
+  ℹ️ Sobre o projeto
+</button>
+
+</div> <p class="rodape-inicio">
+        Projeto interativo sobre o maracujá
+      </p>
+    </div>
+  </section>
+
+<div id="modalFeira" class="modal-feira">
+  <div class="modal-feira-card">
+
+    <button class="fechar-modal" onclick="fecharModoFeira()">×</button>
+
+    <h2>📱 Como usar na feira</h2>
+
+    <div class="passos-feira">
+
+      <div class="passo-feira">
+        <span>1</span>
+        <p>Escaneie o QR Code no seu celular.</p>
       </div>
 
-      <p class="rodape-inicio">
-        Projeto interativo sobre o maracujá
+      <div class="passo-feira">
+        <span>2</span>
+        <p>Toque em <strong>Continuar Experiência</strong>.</p>
+      </div>
+
+      <div class="passo-feira">
+        <span>3</span>
+        <p>Permita o uso da câmera quando o navegador pedir.</p>
+      </div>
+
+      <div class="passo-feira">
+        <span>4</span>
+        <p>Aponte a câmera para o marcador de realidade aumentada.</p>
+      </div>
+
+      <div class="passo-feira">
+        <span>5</span>
+        <p>Faça o quiz e gere seu certificado no final.</p>
+      </div>
+
+    </div>
+<a href="pages/marcador.html" class="botao-marcador-modal">
+  🖨️ Ver marcador AR
+</a>
+    <button class="botao-entendi" onclick="fecharModoFeira()">
+      Entendi
+    </button>
+
+  </div>
+</div>
+<div id="modalSobreProjeto" class="modal-feira">
+  <div class="modal-feira-card">
+
+    <button class="fechar-modal" onclick="fecharSobreProjeto()">×</button>
+
+    <h2>ℹ️ Sobre o Projeto</h2>
+
+    <div class="sobre-projeto-texto">
+
+      <p>
+        O <strong>Maracujá Experience</strong> é um projeto interativo desenvolvido
+        para a Feira de Ciências 2026.
+      </p>
+
+      <p>
+        Ele apresenta informações sobre o maracujá usando tecnologia, realidade
+        aumentada, quiz educativo, passaporte digital e certificado de participação.
+      </p>
+
+      <div class="topicos-projeto">
+        <p>🍈 Tema: Maracujá</p>
+        <p>📚 Área: Ciências e Tecnologia</p>
+        <p>📷 Recurso: Realidade Aumentada</p>
+        <p>🧠 Atividade: Quiz Interativo</p>
+        <p>🏆 Finalização: Certificado Digital</p>
+      </div>
+
+      <p>
+        O objetivo é tornar o aprendizado mais dinâmico, visual e participativo,
+        aproximando os alunos do conteúdo científico por meio da tecnologia.
       </p>
 
     </div>
 
-  </section>
+    <button class="botao-entendi" onclick="fecharSobreProjeto()">
+      Entendi
+    </button>
 
+  </div>
+</div>
   <audio id="audioBoasVindas" preload="auto">
     <source src="sounds/boas-vindas.mp3" type="audio/mpeg">
   </audio>

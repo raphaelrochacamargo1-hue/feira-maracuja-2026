@@ -17,60 +17,70 @@
 
 <body>
 
-  <div class="topo-ar">
-    <a href="../index.html">← Voltar</a>
-    <h1>Maracujá AR</h1>
-    <button onclick="mostrarCuriosidade()">Info</button>
-  </div>
+<div class="topo-ar">
+  <a href="../index.html">← Início</a>
+  <h1>Maracujá AR</h1>
+  <a href="quiz.html">Quiz →</a>
+</div>
 
-  <div id="popupCuriosidade">
-    🍈 <strong>Maracujá</strong>
-    <p>
-      O maracujá é rico em vitamina C, antioxidantes e fibras.
-      Ele também é muito conhecido pelo seu aroma marcante e uso em sucos,
-      doces e receitas naturais.
-    </p>
-    <button onclick="fecharCuriosidade()">Fechar</button>
-  </div>
+<div id="painel">
+  <h2 id="titulo">🍈 Maracujá</h2>
+  <p id="texto">Escolha uma opção abaixo para aprender mais.</p>
+  <button onclick="fecharPainel()">Fechar</button>
+</div>
 
-  <a-scene
-    embedded
-    vr-mode-ui="enabled: false"
-    renderer="logarithmicDepthBuffer: true;"
-    arjs="sourceType: webcam; debugUIEnabled: false;"
-  >
+<div class="menu-ar">
+  <button onclick="mostrarInfo('flor')">🌸<span>Flor</span></button>
+  <button onclick="mostrarInfo('polinizacao')">🐝<span>Polinização</span></button>
+  <button onclick="mostrarInfo('beneficios')">🧪<span>Benefícios</span></button>
+  <button onclick="mostrarInfo('curiosidades')">🍹<span>Curiosidades</span></button>
+</div>
 
-    <a-marker preset="hiro">
+<a-scene
+  embedded
+  vr-mode-ui="enabled: false"
+  renderer="logarithmicDepthBuffer: true;"
+  arjs="sourceType: webcam; debugUIEnabled: false;"
+>
 
-      <a-image
-        src="../assets/ar/maracuja.png"
-        position="0 0 0"
-        rotation="-90 0 0"
-        width="2.2"
-        height="2.2"
-        class="clickable"
-        onclick="mostrarCuriosidade()"
-        animation="property: rotation; to: -90 360 0; loop: true; dur: 12000; easing: linear;"
-        animation__pulse="property: scale; dir: alternate; dur: 1600; loop: true; to: 1.08 1.08 1.08; easing: easeInOutSine;">
-      </a-image>
+  <a-marker preset="hiro">
 
-      <a-text
-        value="MARACUJA"
-        position="-1.2 1.7 0"
-        rotation="-90 0 0"
-        color="#FFD700"
-        scale="1 1 1">
-      </a-text>
+  <a-image
+  src="../assets/ar/maracuja.png"
+  position="0 0.3 0"
+  rotation="-90 0 0"
+  width="2.2"
+  height="2.2"
+  animation="property: rotation; to: -90 360 0; loop: true; dur: 12000; easing: linear;"
+  animation__pulse="property: scale; dir: alternate; dur: 1600; loop: true; to: 1.08 1.08 1.08; easing: easeInOutSine;">
+</a-image>
 
-    </a-marker>
+    <a-text
+      value="MARACUJA"
+      position="-1.2 1.7 0"
+      rotation="-90 0 0"
+      color="#FFD700"
+      scale="1 1 1">
+    </a-text>
 
-    <a-entity camera></a-entity>
+  </a-marker>
 
-  </a-scene>
+  <a-entity camera></a-entity>
 
-  <audio id="somClique" src="../sounds/toque.mp3"></audio>
+</a-scene>
 
-  <script src="../js/camera.js"></script>
+<nav class="bottom-nav">
+  <a href="../index.html">🏠<span>Início</span></a>
+  <a href="camera.html" class="ativo">📷<span>AR</span></a>
+  <a href="quiz.html">🎮<span>Quiz</span></a>
+  <a href="certificado.html">🏆<span>Certificado</span></a>
+</nav>
+
+<script src="../js/camera.js"></script>
+
+<script>
+  localStorage.setItem("viuAR", "sim");
+</script>
 
 </body>
 </html>

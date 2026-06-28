@@ -1,110 +1,168 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-  margin: 0;
-  overflow: hidden;
-  font-family: 'Poppins', Arial, sans-serif;
-  background: #000;
+body{
+  margin:0;
+  overflow:hidden;
+  font-family:'Poppins', Arial, sans-serif;
+  background:#000;
 }
 
-/* Barra superior */
-.topo-ar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 14px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(8px);
-  color: white;
-  z-index: 9999;
+/* TOPO */
+
+.topo-ar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  padding:14px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,.72);
+  backdrop-filter:blur(10px);
+  color:white;
+  z-index:9999;
 }
 
-.topo-ar a,
-.topo-ar button {
-  color: white;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 14px;
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 9px 14px;
-  border-radius: 999px;
+.topo-ar a{
+  color:white;
+  text-decoration:none;
+  font-weight:700;
+  font-size:14px;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.22);
+  padding:9px 14px;
+  border-radius:999px;
 }
 
-.topo-ar button {
-  cursor: pointer;
+.topo-ar h1{
+  font-size:17px;
+  font-weight:800;
 }
 
-.topo-ar h1 {
-  font-size: 17px;
-  font-weight: 800;
+/* PAINEL */
+
+#painel{
+  position:fixed;
+  left:50%;
+  bottom:150px;
+  transform:translateX(-50%) translateY(25px);
+  width:90%;
+  max-width:430px;
+  background:rgba(12,18,12,.96);
+  color:white;
+  padding:24px;
+  border-radius:24px;
+  text-align:center;
+  z-index:99999;
+  opacity:0;
+  pointer-events:none;
+  border:2px solid rgba(255,213,79,.55);
+  box-shadow:0 0 35px rgba(255,213,79,.35);
+  transition:.35s ease;
 }
 
-/* Cena AR ocupando a tela */
-a-scene {
-  width: 100vw !important;
-  height: 100vh !important;
+#painel.ativo{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateX(-50%) translateY(0);
 }
 
-/* Popup de informação */
-#popupCuriosidade {
-  position: fixed;
-  left: 50%;
-  bottom: 35px;
-  transform: translateX(-50%) translateY(25px);
-  width: 90%;
-  max-width: 430px;
-  background: rgba(12, 18, 12, 0.96);
-  color: white;
-  padding: 24px;
-  border-radius: 24px;
-  text-align: center;
-  z-index: 99999;
-  display: none;
-  opacity: 0;
-  border: 2px solid rgba(255, 213, 79, 0.55);
-  box-shadow: 0 0 35px rgba(255, 213, 79, 0.35);
-  transition: 0.35s ease;
+#painel h2{
+  color:#ffd54f;
+  margin-bottom:12px;
+  font-size:22px;
 }
 
-#popupCuriosidade.ativo {
-  display: block;
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
+#painel p{
+  line-height:1.6;
+  font-size:15px;
 }
 
-#popupCuriosidade strong {
-  color: #ffd54f;
-  font-size: 24px;
+#painel button{
+  margin-top:15px;
+  border:none;
+  background:linear-gradient(135deg,#ffd54f,#ffb300);
+  color:#123d1f;
+  padding:12px 28px;
+  border-radius:30px;
+  font-weight:800;
 }
 
-#popupCuriosidade p {
-  margin: 15px 0;
-  line-height: 1.6;
-  font-size: 15px;
+/* BOTÕES DE INFORMAÇÃO */
+
+.menu-ar{
+  position:fixed;
+  left:0;
+  bottom:68px;
+  width:100%;
+  background:rgba(0,0,0,.84);
+  padding:10px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  z-index:9998;
 }
 
-#popupCuriosidade button {
-  border: none;
-  background: linear-gradient(135deg, #ffd54f, #ffb300);
-  color: #123d1f;
-  padding: 12px 28px;
-  border-radius: 30px;
-  font-weight: 800;
+.menu-ar button{
+  border:none;
+  border-radius:16px;
+  padding:10px 5px;
+  font-weight:800;
+  color:white;
+  background:#4CAF50;
+  font-size:19px;
 }
 
-/* Esconde coisas antigas caso ainda existam no HTML */
-.menu-ar,
-.bottom-nav,
-#painel,
-.botao-curiosidade {
-  display: none !important;
+.menu-ar button span{
+  display:block;
+  font-size:10px;
+  margin-top:4px;
+}
+
+.menu-ar button:nth-child(2){ background:#FF9800; }
+.menu-ar button:nth-child(3){ background:#7A4BB3; }
+.menu-ar button:nth-child(4){ background:#2196F3; }
+
+/* NAVEGAÇÃO */
+
+.bottom-nav{
+  position:fixed;
+  left:0;
+  bottom:0;
+  width:100%;
+  background:rgba(0,0,0,.94);
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  padding:9px;
+  z-index:9999;
+}
+
+.bottom-nav a{
+  color:white;
+  text-decoration:none;
+  text-align:center;
+  font-weight:bold;
+  font-size:17px;
+}
+
+.bottom-nav span{
+  display:block;
+  font-size:10px;
+  margin-top:3px;
+}
+
+.bottom-nav a.ativo{
+  color:#ffd54f;
+}
+
+/* CENA */
+
+a-scene{
+  width:100vw !important;
+  height:100vh !important;
 }
